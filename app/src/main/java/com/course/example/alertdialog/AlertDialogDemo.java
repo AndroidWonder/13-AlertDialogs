@@ -75,10 +75,9 @@ public class AlertDialogDemo extends Activity {
 			    
 				txtMsg.setText("I am here!");
 				
-				//Create and position a Toast
+				//Create Toast
 				Toast toast = Toast.makeText(getApplicationContext(), 
 						"Alert Dialog Box Example", Toast.LENGTH_LONG);
-				toast.setGravity(Gravity.TOP, 100, 100);
 				toast.show();
 			}
         	

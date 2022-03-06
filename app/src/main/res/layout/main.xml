@@ -8,6 +8,8 @@
         android:id="@+id/btnGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#ff0000ff"
+        android:textColor="#ffffffff"
         android:text="GO" >
     </Button>
 
@@ -15,6 +17,7 @@
         android:id="@+id/txtMsg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dip"
         android:hint="click the button" >
     </EditText>
 
