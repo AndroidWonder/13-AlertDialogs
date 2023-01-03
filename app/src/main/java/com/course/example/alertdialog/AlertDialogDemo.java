@@ -29,49 +29,51 @@ public class AlertDialogDemo extends Activity {
 			public void onClick(View view) {
 				
 				//create dialog
-		        AlertDialog dialog = new AlertDialog.Builder(AlertDialogDemo.this).create();
-		        
-		      //set message, title, and icon
-	        	dialog.setTitle("Terminator"); 
-	        	dialog.setMessage("Are you sure that you want to quit?"); 
-	        	dialog.setIcon(R.drawable.ic_menu_end_conversation);
+				AlertDialog.Builder builder = new AlertDialog.Builder(AlertDialogDemo.this);
+
+
+				//set message, title, and icon
+	        	builder.setTitle("Terminator");
+	        	builder.setMessage("Are you sure that you want to quit?");
+	        	builder.setIcon(R.drawable.ic_menu_end_conversation);
 	        	
 	        	//set three option buttons
-	        	dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() { 
-	        		public void onClick(DialogInterface dialog, int whichButton) { 
+	        	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	        		public void onClick(DialogInterface dialog, int whichButton) {
 	            	 //whatever should be done when answering "YES" goes here
 	        		 msg = "YES " + whichButton;
 	        		 txtMsg.setText(msg);
 	        		}              
 	        	});//setPositiveButton
 	        	
-	        	dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "NO", new DialogInterface.OnClickListener() { 
+	        	builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
 	        		public void onClick(DialogInterface dialog, int whichButton) { 
 	            	 //whatever should be done when answering "NO" goes here
-	        		 msg = "NO " + whichButton;	
+	        		 msg = "No " + whichButton;
 	        		 txtMsg.setText(msg); 
 	             } 
 	        	});//setNegativeButton
 	        	
-	        		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "Cancel",	new DialogInterface.OnClickListener() {
+	        		builder.setNeutralButton("Cancel",	new DialogInterface.OnClickListener() {
 	        		public void onClick(DialogInterface dialog, int whichButton) {
 	               	 //whatever should be done when answering "CANCEL" goes here
 	        		 msg = "CANCEL " + whichButton;
 	        		 txtMsg.setText(msg);
 	        		}//OnClick
 	        	});//setNeutralButton
-	        		
-			    dialog.show();
+
+				AlertDialog alert = builder.create();
+			    alert.show();
 			    
-			    //Note: In general,
-			    //after showing a dialog you should have NO more 
-			    //code. Let the buttons of the dialog box handle
-			    //the rest of the logic. For instance, in this 
-			    //example a dialog box is displayed (once shown
-			    //you can not interact with the parent until the
-			    //dialog is closed) however the code in the parent 
-			    //continues to execute after the show() method is 
-			    //called.
+			    /* Note: In general,
+			    after showing a dialog you should have NO more
+			    code. Let the buttons of the dialog box handle
+			    the rest of the logic. For instance, in this
+			    example a dialog box is displayed (once shown
+			    you can not interact with the parent until the
+			    dialog is closed) however the code in the parent
+			    continues to execute after the show() method is
+			    called.*/
 			    
 				txtMsg.setText("I am here!");
 				
