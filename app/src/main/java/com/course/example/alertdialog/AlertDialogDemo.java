@@ -31,7 +31,6 @@ public class AlertDialogDemo extends Activity {
 				//create dialog
 				AlertDialog.Builder builder = new AlertDialog.Builder(AlertDialogDemo.this);
 
-
 				//set message, title, and icon
 	        	builder.setTitle("Terminator");
 	        	builder.setMessage("Are you sure that you want to quit?");
