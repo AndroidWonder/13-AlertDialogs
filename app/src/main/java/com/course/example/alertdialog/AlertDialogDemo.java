@@ -52,13 +52,14 @@ public class AlertDialogDemo extends Activity {
 	        		 txtMsg.setText(msg); 
 	             } 
 	        	});//setNegativeButton
-	        	
-	        		builder.setNeutralButton("Cancel",	new DialogInterface.OnClickListener() {
-	        		public void onClick(DialogInterface dialog, int whichButton) {
+
+				//can use a lambda optionally instead of an anon inner class
+				builder.setNeutralButton("Cancel",	(DialogInterface.OnClickListener)
+							(dialog, whichButton) -> {
 	               	 //whatever should be done when answering "CANCEL" goes here
 	        		 msg = "CANCEL " + whichButton;
 	        		 txtMsg.setText(msg);
-	        		}//OnClick
+
 	        	});//setNeutralButton
 
 				AlertDialog alert = builder.create();
